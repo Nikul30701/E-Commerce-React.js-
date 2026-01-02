@@ -1,16 +1,49 @@
-# React + Vite
+# 🛒 React E-Commerce App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **React E-Commerce application** built with real-world frontend practices such as Context API, React Router, Tailwind CSS, and API optimization techniques.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- 🛍️ Product listing using Fake Store API  
+- 🧩 Category-based product filtering  
+- 🛒 Cart management (Add / Remove / Quantity update)  
+- 💾 Cart persistence using Local Storage  
+- ⚡ Skeleton loaders for slow API handling  
+- 🧭 Routing with React Router DOM  
+- 🎨 Tailwind CSS with CSS variables (`--primary`)  
+- 📱 Fully responsive UI  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React (Hooks)  
+- **State Management:** Context API + useReducer  
+- **Routing:** React Router DOM  
+- **Styling:** Tailwind CSS  
+- **Icons:** lucide-react  
+- **API:** Fake Store API  
+- **Build Tool:** Vite  
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+├── components/
+│   ├── ProductCard.jsx
+│   ├── Cart.jsx
+│   ├── Checkout.jsx
+│   └── LoadingSkeleton.jsx
+├── context/
+│   └── CartContext.jsx
+├── pages/
+│   └── ProductListing.jsx
+├── services/
+│   └── api.js
+├── App.jsx
+├── main.jsx
+└── index.css
