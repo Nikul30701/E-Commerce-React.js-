@@ -21,9 +21,9 @@ const api = {
         }
     },
 
-    getProducts: async (category) => {
+    getProductsByCategory: async (category) => {
         try {
-            const response = await fetch(`https://fakestoreapi.com/products/${category}`)
+            const response = await fetch(`https://fakestoreapi.com/products/category/${category}`)
             if (!response.ok) throw new Error('Category not found')
             return await response.json()
         } catch (error) {
@@ -32,3 +32,5 @@ const api = {
         }
     }
 }
+
+export default api;

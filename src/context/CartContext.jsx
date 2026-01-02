@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useReducer, useContext } from 'react'
+import React, { createContext, useCallback, useReducer, useContext, useEffect } from 'react'
 
 const CartContext = createContext()
 
@@ -33,7 +33,7 @@ const cartReducer = (state, action) => {
     }
 }
 
-const CartProvider= () => {
+const CartProvider= ({children}) => {
     
     const [cart, dispatch] = useReducer(cartReducer, [])
 
@@ -66,9 +66,17 @@ const CartProvider= () => {
         dispatch({ type: 'CLEAR_CART' });
     }, []);
 
+    const INR_RATE = 90.17
 
-    const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity)
+    const totalItems = cart.reduce(
+        (sum, item) => sum + item.quantity,
+        0
+    )
+    const totalPrice = cart.reduce(
+        (sum, item) => sum + (item.price * item.quantity) * INR_RATE,
+        0
+    )
+
     
     return (
         <CartContext.Provider value={{cart, addToCart, removeFromCart, updateQuantity,clearCart, totalPrice, totalItems}}>
